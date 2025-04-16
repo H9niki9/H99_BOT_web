@@ -1,0 +1,243 @@
+/* Modern Dark Theme */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0f;
+    color: #e1e1e6;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Animated Stars Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(2px 2px at 20px 30px, #ffffff15 50%, transparent),
+                    radial-gradient(2px 2px at 40px 70px, #ffffff15 50%, transparent),
+                    radial-gradient(2px 2px at 50px 160px, #ffffff15 50%, transparent),
+                    radial-gradient(2px 2px at 90px 40px, #ffffff15 50%, transparent),
+                    radial-gradient(2px 2px at 130px 80px, #ffffff15 50%, transparent);
+    background-size: 200px 200px;
+    animation: stars 8s linear infinite;
+    z-index: -1;
+}
+
+@keyframes stars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-200px); }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header with Gradient */
+header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 4rem 0;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5em;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-weight: 800;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 15px 0 0;
+    opacity: 0.9;
+    text-align: center;
+    color: #a5b4fc;
+}
+
+/* Feature Cards */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.feature-card {
+    background: rgba(26, 26, 46, 0.6);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.feature-card h3 {
+    color: #a5b4fc;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.feature-card p {
+    color: #e1e1e6;
+    margin-bottom: 0;
+}
+
+/* Download Section */
+.download-section {
+    text-align: center;
+    padding: 60px 30px;
+    background: rgba(26, 26, 46, 0.6);
+    margin: 40px 0;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    color: white;
+    padding: 16px 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Installation Guide */
+.installation-guide {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(20, 20, 35, 0.6);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.installation-guide h3 {
+    color: #a5b4fc;
+    margin-top: 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #a5b4fc;
+    margin-top: 80px;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+}
+
+footer p {
+    margin: 8px 0;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header {
+        padding: 3rem 0;
+    }
+    
+    header h1 {
+        font-size: 2.5em;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .download-section {
+        padding: 40px 20px;
+    }
+}
+
+header .highlight-text {
+    font-size: 1.4em;
+    color: #6366f1;
+    font-weight: 700;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.earnings {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.earnings-text {
+    font-size: 1.2em;
+    color: #a5b4fc;
+    margin-bottom: 10px;
+}
+
+.earnings-amount {
+    font-size: 1.4em;
+    color: #4ade80;
+    font-weight: bold;
+    margin: 5px 0;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+.ingame-text {
+    font-size: 0.9em;
+    color: #a5b4fc;
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 8px;
+}
